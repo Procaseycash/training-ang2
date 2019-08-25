@@ -1,0 +1,34 @@
+.overlay {
+  position: absolute;
+  width: 60%;
+  height: 70%;
+  z-index: 1000;
+  top: 3%;
+  left: 15%;
+  background: #fff;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  box-shadow: 1px 1px 1px #ddd;
+  border: 3px solid green;
+  color: #000;
+}
+.relative {
+  position: relative;
+  padding: 10px;
+}
+.address-content, .session-content {
+  background: #dddddd;
+  color: #000000;
+  padding: 5px;
+}
+.close {
+  float: right;
+  background: red;
+  color: #fff;
+  padding: 5px;
+  font-size: 13px;
+}
+.clearfix {
+  clear: both;
+}

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-view-user-details',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-user-details.component.css']
 })
 export class ViewUserDetailsComponent implements OnInit {
+  @Input() public user: User = null;
+  @Output() emitter = new EventEmitter();
 
-  constructor() { }
+  constructor() {
+  }
+
+  onClose() {
+    this.emitter.emit(null);
+  }
 
   ngOnInit() {
   }

@@ -1,5 +1,14 @@
 <div>
-  <table>
+  <div class="">
+   <select name="userType" id="" [(ngModel)]="type" ngModelOptions="standalone">
+      <option value="" disabled selected>Select Type</option>
+      <option [value]="types.GUEST">{{types.GUEST}}</option>
+      <option [value]="types.UNDERGRADUATE">{{types.UNDERGRADUATE}}</option>
+      <option [value]="types.GRADUATED">{{types.GRADUATED}}</option>
+      <option [value]="types.POSTGRADUATE">{{types.POSTGRADUATE}}</option>
+    </select>
+  </div>
+  <table width="100%" cellpadding="5" cellspacing="5" border="1">
     <tr>
       <td>#</td>
       <td>First Name</td>
@@ -7,13 +16,14 @@
       <td>DOB</td>
       <td>Action</td>
     </tr>
-    <tr *ngFor="let user of users; let i = index">
+    <tr *ngFor="let user of users|guest:type; let i = index">
       <td>{{i + 1}}</td>
       <td>{{user.firstName}}</td>
       <td>{{user.lastName}}</td>
       <td>{{user.dob}}</td>
-      <td><button>View Details</button></td>
+      <td><button (click)="viewDetail(user)">View Details</button></td>
     </tr>
-
+    <!--<tr ng><td colspan="5">No Record Found</td></tr>-->
   </table>
 </div>
+<app-view-user-details *ngIf="user" [user]="user" (emitter)="feedback($event)"></app-view-user-details>

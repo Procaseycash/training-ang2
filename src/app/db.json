@@ -4,7 +4,22 @@
       "firstName": "Kazeem",
       "lastName": "Boluwatife",
       "addresses": [],
+      "role": "Guest",
       "dob": "2019-09-09"
+    },
+    {
+      "firstName": "Kunle",
+      "lastName": "James",
+      "addresses": [],
+      "role": "Undergraduate",
+      "dob": "2016-09-09"
+    },
+    {
+      "firstName": "Bisola",
+      "lastName": "Olawale",
+      "addresses": [],
+      "role": "Guest",
+      "dob": "2016-09-09"
     }
   ]
 }

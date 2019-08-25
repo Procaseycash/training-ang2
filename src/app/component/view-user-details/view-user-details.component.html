@@ -1,3 +1,33 @@
-<p>
-  view-user-details works!
-</p>
+<div class="overlay">
+  <div class="relative">
+  <button (click)="onClose()" class="close">*</button>
+    <div class="clearfix"></div>
+    <table width="100%" cellspacing="5" cellpadding="5" border="1">
+      <tr>
+        <td>Name</td>
+        <td>{{user.firstName + ' ' + user.lastName}}</td>
+      </tr>
+      <tr>
+        <td>DOB</td>
+        <td>{{user.dob | date}}</td>
+      </tr>
+      <tr>
+        <td>Addresses</td>
+        <td>
+          <div class="address-content" *ngFor="let addr of user.addresses">{{addr.title}}</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Sessions</td>
+        <td>
+          <div class="session-content" *ngFor="let session of user.sessions">{{session.title}}</div>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </div>
+</div>

@@ -5,15 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentComponent } from './component/component.component';
 import { ViewUserDetailsComponent } from './component/view-user-details/view-user-details.component';
+import { GuestPipe } from './pipes/guest.pipe';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComponentComponent,
-    ViewUserDetailsComponent
+    ViewUserDetailsComponent,
+    GuestPipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
