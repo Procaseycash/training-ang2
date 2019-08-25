@@ -4,23 +4,51 @@
 <div>
   Model Binding Form Template
   <form>
-    <div><label for="f"></label><input type="text" id="f"></div>
-    <div><label for="l"></label><input type="text" id="l"></div>
-    <div><label for="m"></label><input type="text" id="m"></div>
-    <div><label for="dob"></label><input type="text" id="dob"></div>
-    <div><label for="role"></label><input type="text" id="role"></div>
-    <div><label for="address"></label><input type="text" id="address"></div>
-    <div><label for="session"></label><input type="text" id="session"></div>
+    <div><label for="f">FirstName</label><input [(ngModel)]="user.firstName" name="firstName" type="text" id="f"></div>
+    <div><label for="l">LastName</label><input  [(ngModel)]="user.lastName" name="lastName"  type="text" id="l"></div>
+    <div><label for="m">MiddleName</label><input  [(ngModel)]="user.middleName"  name="middelName" type="text" id="m"></div>
+    <div><label for="dob">DOB</label><input  [(ngModel)]="user.dob"  name="dob"   type="text" id="dob"></div>
+    <div><label for="role">Role</label><input  [(ngModel)]="user.role"  name="role"   type="text" id="role"></div>
+    <div>
+      <p>You can add or more address</p>
+      <label for="address">Address</label>
+      <input  [(ngModel)]="user.address.title" type="text"  name="add_title"   id="address">
+      <input  [(ngModel)]="user.address.description"  name="add_description"   type="text" id="description">
+      <button (click)="addAddress(user.address)">Add Address</button>
+    </div>
+    <div>
+      <p>You can add or more session</p>
+      <label for="session">Session</label>
+      <input  [(ngModel)]="user.session.title"  name="session_title"   type="text" id="session">
+      <input  [(ngModel)]="user.session.description"  name="session_description"   type="text" id="description_">
+      <button (click)="addSession(user.session)">Add Session</button>
+    </div>
+    <div>
+      <button (click)="submitModelForm()">Save Model</button>
+    </div>
   </form>
   <br><br>
   NGform native binding Form Template
-  <form>
-    <div><label for="f_"></label><input type="text" id="f_"></div>
-    <div><label for="ll"></label><input type="text" id="ll"></div>
-    <div><label for="mm"></label><input type="text" id="mm"></div>
-    <div><label for="dob_"></label><input type="text" id="dob_"></div>
-    <div><label for="role_"></label><input type="text" id="role_"></div>
-    <div><label for="address_"></label><input type="text" id="address_"></div>
-    <div><label for="session_"></label><input type="text" id="session_"></div>
+  <form #userForm="ngForm">
+    <div><label for="ff">FirstName</label><input name="firstName" type="text" id="ff"></div>
+    <div><label for="lf">LastName</label><input name="lastName" type="text" id="lf"></div>
+    <div><label for="mf">MiddleName</label><input name="middleName" type="text" id="mf"></div>
+    <div><label for="dobf">DOB</label><input name="dob" type="text" id="dobf"></div>
+    <div><label for="rolef">Role</label><input name="role" type="text" id="rolef"></div>
+    <div>
+      <p>You can add or more address</p>
+      <label for="address">Address</label>
+      <input #title type="text">
+      <input #descp type="text">
+      <button (click)="addAddress({title: title.value, description: descp.value}, 1)">Add Address</button>
+    </div>
+    <div>
+      <p>You can add or more address</p>
+      <label for="address">Address</label>
+      <input #title_ type="text">
+      <input #descp_ type="text">
+      <button (click)="addSession({title: title_.value, description: descp_.value}, 1)">Add Address</button>
+    </div>
+    <button (click)="submitNativeForm(userForm.value)">Save Model</button>
   </form>
 </div>

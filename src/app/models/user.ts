@@ -11,6 +11,7 @@ export class User {
   dob: string;
   id?: number;
   sessions?: Session[];
+  [key: string]: any
 
   constructor(user: User) {
     this.sessions = user.sessions || [];

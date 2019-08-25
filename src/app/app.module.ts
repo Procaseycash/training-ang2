@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ComponentComponent } from './component/component.component';
 import { ViewUserDetailsComponent } from './component/view-user-details/view-user-details.component';
 import { GuestPipe } from './pipes/guest.pipe';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormTemplateComponent } from './component/form-template/form-template.component';
 import { FormReactiveComponent } from './component/form-reactive/form-reactive.component';
 
@@ -22,7 +22,8 @@ import { FormReactiveComponent } from './component/form-reactive/form-reactive.c
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

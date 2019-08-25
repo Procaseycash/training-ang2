@@ -1,26 +1,61 @@
 <p>
   form-reactive
 </p>
-<div>
-  Model Binding Form Template
-  <form>
-    <div><label for="f"></label><input type="text" id="f"></div>
-    <div><label for="l"></label><input type="text" id="l"></div>
-    <div><label for="m"></label><input type="text" id="m"></div>
-    <div><label for="dob"></label><input type="text" id="dob"></div>
-    <div><label for="role"></label><input type="text" id="role"></div>
-    <div><label for="address"></label><input type="text" id="address"></div>
-    <div><label for="session"></label><input type="text" id="session"></div>
-  </form>
+<div style="height: 100%">
+  <div style="float: left; width: 50%;">
+    <form [formGroup]="userFg">
+      <div>
+        <label for="f">FirstName</label>
+        <input [ngClass]="userFg.get('firstName').touched && userFg.get('firstName').invalid && 'error'"
+               formControlName="firstName" type="text" id="f">
+        <div *ngIf="userFg.get('firstName').touched && userFg.get('firstName').invalid" class="errorMessage">
+          {{messages.firstName}}
+        </div>
+      </div>
+      <div>
+        <label for="l">LastName</label>
+        <input [ngClass]="userFg.get('lastName').touched && userFg.get('lastName').invalid && 'error'"
+               formControlName="lastName" type="text" id="l">
+      </div>
+      <div>
+        <label for="m">MiddleName</label>
+        <input  [ngClass]="userFg.get('middleName').touched && userFg.get('middleName').invalid && 'error'"
+                formControlName="middleName" type="text" id="m">
+      </div>
+      <div>
+        <label for="dob">DOB</label>
+        <input [ngClass]="userFg.get('dob').touched && userFg.get('dob').invalid && 'error'"
+               formControlName="dob" type="text" id="dob">
+      </div>
+      <div>
+        <label for="role">Role</label>
+        <input  [ngClass]="userFg.get('role').touched && userFg.get('role').invalid && 'error'"
+                formControlName="role" type="text" id="role"></div>
+      <div>
+        <form [formGroup]="addressF" action="">
+          <label for="address">Address</label>
+          <input [ngClass]="addressF.get('title').touched && addressF.get('title').invalid && 'error'"
+                 formControlName="title" type="text" id="title_">
+          <input  [ngClass]="addressF.get('description').touched && addressF.get('description').invalid && 'error'"
+                  formControlName="description" type="text" id="description_">
+          <button (click)="addInfo('addresses')">Add Address</button>
+        </form>
+      </div>
+      <div>
+        <form [formGroup]="sessionF" action="">
+          <label for="address">Session</label>
+          <input  [ngClass]="sessionF.get('title').touched && sessionF.get('title').invalid && 'error'"
+                  formControlName="title" type="text" id="title">
+          <input  [ngClass]="sessionF.get('description').touched && sessionF.get('description').invalid && 'error'"
+                  formControlName="description" type="text" id="description">
+          <button (click)="addInfo('sessions')">Add Session</button>
+        </form>
+      </div>
+      <button [disabled]="userFg.invalid" (click)="save()">Save Model</button>
+    </form>
+  </div>
+  <div style="float: right; width: 50%">
+    {{this.userFg.value | json}}
+  </div>
   <br><br>
-  NGform native binding Form Template
-  <form>
-    <div><label for="f_"></label><input type="text" id="f_"></div>
-    <div><label for="ll"></label><input type="text" id="ll"></div>
-    <div><label for="mm"></label><input type="text" id="mm"></div>
-    <div><label for="dob_"></label><input type="text" id="dob_"></div>
-    <div><label for="role_"></label><input type="text" id="role_"></div>
-    <div><label for="address_"></label><input type="text" id="address_"></div>
-    <div><label for="session_"></label><input type="text" id="session_"></div>
-  </form>
 </div>

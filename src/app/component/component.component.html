@@ -1,6 +1,6 @@
 <div>
   <div class="">
-   <select name="userType" id="" [(ngModel)]="type" ngModelOptions="standalone">
+    <select name="userType" id="" [(ngModel)]="type" ngModelOptions="standalone">
       <option value="" disabled selected>Select Type</option>
       <option [value]="types.GUEST">{{types.GUEST}}</option>
       <option [value]="types.UNDERGRADUATE">{{types.UNDERGRADUATE}}</option>
@@ -21,9 +21,17 @@
       <td>{{user.firstName}}</td>
       <td>{{user.lastName}}</td>
       <td>{{user.dob}}</td>
-      <td><button (click)="viewDetail(user)">View Details</button></td>
+      <td>
+        <button (click)="viewDetail(user)">View Details</button>
+      </td>
     </tr>
     <!--<tr ng><td colspan="5">No Record Found</td></tr>-->
   </table>
 </div>
 <app-view-user-details *ngIf="user" [user]="user" (emitter)="feedback($event)"></app-view-user-details>
+<div style="border: 2px solid red; padding: 10px; margin-bottom: 10px">
+  <app-form-template></app-form-template>
+</div>
+<div style="border: 2px solid pink; padding: 10px; margin-bottom: 10px; min-height: 400px">
+  <app-form-reactive></app-form-reactive>
+</div>
