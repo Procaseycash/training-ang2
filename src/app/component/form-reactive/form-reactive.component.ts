@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {BaseContent} from '../base.content';
-import {deepCopy} from '../../utils';
+import {User} from '../../models/user';
+import {ServiceService} from '../../service/service.service';
 
 @Component({
   selector: 'app-form-reactive',
@@ -12,8 +13,9 @@ export class FormReactiveComponent extends BaseContent implements OnInit {
   public userFg: FormGroup;
   public addressF: FormGroup;
   public sessionF: FormGroup;
+  public addC = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private readonly userService: ServiceService) {
     super();
     this.userFg = fb.group({
       firstName: ['', Validators.required],
@@ -26,6 +28,17 @@ export class FormReactiveComponent extends BaseContent implements OnInit {
     });
     this.sessionF = this.getGroup(fb);
     this.addressF = this.getGroup(fb);
+  }
+
+  addNewControl(names: string[]) {
+    names.forEach(name => !this.userFg.contains(name)
+      && this.userFg.addControl(name, new FormControl(Validators.compose([Validators.required]))));
+    this.addC = true;
+  }
+
+  removeNewControl(names: string[]) {
+    names.forEach(name => this.userFg.contains(name) && this.userFg.removeControl(name));
+    this.addC = false;
   }
 
   getGroup(fb) {
@@ -49,7 +62,9 @@ export class FormReactiveComponent extends BaseContent implements OnInit {
     console.log({user});
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const obj = await this.userService.getUsers();
+    this.userFg.patchValue(new User(obj[3]));
   }
 
 }

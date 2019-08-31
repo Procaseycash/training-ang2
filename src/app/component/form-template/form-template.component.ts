@@ -50,7 +50,7 @@ export class FormTemplateComponent implements OnInit {
     console.log({user: this.user});
   }
 
-  addSession(session, type) {
+  addSession(session, type?) {
     if (type) {
       this.userN.sessions.push(session);
       this.userN.session = {title: '', description: ''};

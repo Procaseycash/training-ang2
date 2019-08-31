@@ -51,8 +51,15 @@
           <button (click)="addInfo('sessions')">Add Session</button>
         </form>
       </div>
+
+      <div *ngIf="addC">
+        <label for="l">LastName</label>
+        <input [ngClass]="userFg.get('lastName').touched && userFg.get('lastName').invalid && 'error'"
+               formControlName="lastName" type="text" id="l">
+      </div>
       <button [disabled]="userFg.invalid" (click)="save()">Save Model</button>
     </form>
+
   </div>
   <div style="float: right; width: 50%">
     {{this.userFg.value | json}}

@@ -11,16 +11,16 @@ export class User {
   dob: string;
   id?: number;
   sessions?: Session[];
-  [key: string]: any
+  [key: string]: any;
 
   constructor(user: User) {
-    this.sessions = user.sessions || [];
+    this.sessions = user.sessions ? user.sessions.map( session => new Session(session)) : [];
     this.id = user.id || null;
     this.addresses = user.addresses || [];
     this.dob = user.dob;
     this.role = user.role || UserEnum.GUEST;
-    this.middleName = user.middleName || '';
-    this.lastName = user.lastName;
-    this.firstName = user.firstName;
+    this.middleName = user.middleName || user.middle_name || '';
+    this.lastName = user.lastName ||  user.last_name;
+    this.firstName = user.firstName ||  user.first_name;
   }
 }

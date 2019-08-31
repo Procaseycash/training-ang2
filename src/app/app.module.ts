@@ -9,6 +9,7 @@ import { GuestPipe } from './pipes/guest.pipe';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormTemplateComponent } from './component/form-template/form-template.component';
 import { FormReactiveComponent } from './component/form-reactive/form-reactive.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormReactiveComponent } from './component/form-reactive/form-reactive.c
     ViewUserDetailsComponent,
     GuestPipe,
     FormTemplateComponent,
-    FormReactiveComponent
+    FormReactiveComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
