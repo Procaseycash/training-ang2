@@ -36,12 +36,8 @@
             ],
             "scripts": [
               "src/assets/vendors/js/material-vendors.min.js",
-              "src/assets/vendors/js/charts/chart.min.js",
-              "src/assets/vendors/js/charts/echarts/echarts.js",
               "src/assets/js/core/app-menu.js",
-              "src/assets/js/core/app.js",
-              "src/assets/js/scripts/pages/material-app.js",
-              "src/assets/js/scripts/pages/dashboard-crypto.js"
+              "src/assets/js/core/app.js"
             ],
             "es5BrowserSupport": true
           },
@@ -110,6 +106,8 @@
             ],
             "scripts": [
               "src/assets/vendors/js/material-vendors.min.js",
+              "src/assets/vendors/js/charts/chart.min.js",
+              "src/assets/vendors/js/charts/echarts/echarts.js",
               "src/assets/js/core/app-menu.js",
               "src/assets/js/core/app.js"
             ],
