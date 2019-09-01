@@ -10,6 +10,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormTemplateComponent } from './component/form-template/form-template.component';
 import { FormReactiveComponent } from './component/form-reactive/form-reactive.component';
 import { HomeComponent } from './home/home.component';
+import { HHeaderComponent } from './home/layout/h-header/h-header.component';
+import { HFooterComponent } from './home/layout/h-footer/h-footer.component';
+import { HBodyComponent } from './home/layout/h-body/h-body.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { HomeComponent } from './home/home.component';
     GuestPipe,
     FormTemplateComponent,
     FormReactiveComponent,
-    HomeComponent
+    HomeComponent,
+    HHeaderComponent,
+    HFooterComponent,
+    HBodyComponent
   ],
   imports: [
     BrowserModule,

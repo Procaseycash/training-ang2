@@ -1,2 +1,19 @@
-Dashboard
-<router-outlet></router-outlet>
+<div id='divBodY' class="vertical-layout vertical-menu material-vertical-layout material-layout 2-columns fixed-navbar"
+     data-open="click" data-menu="vertical-menu" data-col="2-columns">
+  <app-d-header></app-d-header>
+  <app-d-sidebar></app-d-sidebar>
+  <!--Start Content-->
+  <div class="app-content content" style="min-height: 700px">
+    <div class="content-header row">
+    </div>
+    <div class="content-wrapper">
+      <div class="content-body">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+  </div>
+  <!-- END: Content-->
+  <app-d-footer></app-d-footer>
+</div>

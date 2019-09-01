@@ -23,9 +23,26 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/vendors/css/material-vendors.min.css",
+              "src/assets/css/material.css",
+              "src/assets/css/components.css",
+              "src/assets/css/bootstrap-extended.css",
+              "src/assets/css/material-extended.css",
+              "src/assets/css/material-colors.css",
+              "src/assets/css/core/menu/menu-types/material-vertical-menu.css",
+              "src/assets/vendors/css/cryptocoins/cryptocoins.css",
+              "src/assets/css/style.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/vendors/js/material-vendors.min.js",
+              "src/assets/vendors/js/charts/chart.min.js",
+              "src/assets/vendors/js/charts/echarts/echarts.js",
+              "src/assets/js/core/app-menu.js",
+              "src/assets/js/core/app.js",
+              "src/assets/js/scripts/pages/material-app.js",
+              "src/assets/js/scripts/pages/dashboard-crypto.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -80,9 +97,22 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "src/assets/vendors/css/material-vendors.min.css",
+              "src/assets/css/material.css",
+              "src/assets/css/components.css",
+              "src/assets/css/bootstrap-extended.css",
+              "src/assets/css/material-extended.css",
+              "src/assets/css/material-colors.css",
+              "src/assets/css/core/menu/menu-types/material-vertical-menu.css",
+              "src/assets/vendors/css/cryptocoins/cryptocoins.css",
+              "src/assets/css/style.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/vendors/js/material-vendors.min.js",
+              "src/assets/js/core/app-menu.js",
+              "src/assets/js/core/app.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
